@@ -66,12 +66,74 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe elements for animation
-document.querySelectorAll('.exp-card, .project-card, .blog-card, .achievement-card, .video-card, .featured-video').forEach(el => {
+document.querySelectorAll('.exp-card, .pcard, .blog-card, .achievement-card, .video-card, .featured-video').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     observer.observe(el);
 });
+
+// ── YouTube Live Stats (cached 24 h in localStorage) ───────────────────────
+// Paste your YouTube Data API v3 key below (restrict it to pratikphadte.github.io)
+const YT_API_KEY    = 'AIzaSyCt3yw9cAZRJF8G-1VsFPv7mIOJO0DwjVM';                        // <-- add your key here
+const YT_CHANNEL_ID = 'UCnBW5MXKhvQDfcmhcx0RqOQ';
+
+async function fetchYouTubeStats() {
+    if (!YT_API_KEY) return;
+    const CACHE_KEY = 'yt_stats';
+    const TTL = 24 * 60 * 60 * 1000;
+    const cached = localStorage.getItem(CACHE_KEY);
+    if (cached) {
+        const { data, ts } = JSON.parse(cached);
+        if (Date.now() - ts < TTL) { applyYouTubeStats(data); return; }
+    }
+    try {
+        const res = await fetch(
+            `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${YT_CHANNEL_ID}&key=${YT_API_KEY}`
+        );
+        if (!res.ok) return;
+        const json = await res.json();
+        const stats = json.items?.[0]?.statistics;
+        if (!stats) return;
+        localStorage.setItem(CACHE_KEY, JSON.stringify({ data: stats, ts: Date.now() }));
+        applyYouTubeStats(stats);
+    } catch (_) { /* keep static fallback on error */ }
+}
+
+function applyYouTubeStats(stats) {
+    const subsEl  = document.getElementById('yt-subs');
+    const viewsEl = document.getElementById('yt-views');
+    if (subsEl && stats.subscriberCount) {
+        const n = parseInt(stats.subscriberCount);
+        subsEl.textContent = n >= 1000 ? (n / 1000).toFixed(1).replace(/\.0$/, '') + 'K' : String(n);
+    }
+    if (viewsEl && stats.viewCount) {
+        const n = parseInt(stats.viewCount);
+        viewsEl.textContent = n >= 1_000_000
+            ? Math.floor(n / 1_000_000) + 'M+'
+            : Math.floor(n / 1000) + 'K+';
+    }
+}
+
+fetchYouTubeStats();
+
+// Fetch live GitHub star counts
+async function fetchGitHubStars() {
+    const elements = document.querySelectorAll('.gh-stars[data-repo]');
+    for (const el of elements) {
+        const repo = el.getAttribute('data-repo');
+        try {
+            const res = await fetch(`https://api.github.com/repos/${repo}`);
+            if (res.ok) {
+                const data = await res.json();
+                el.textContent = data.stargazers_count.toLocaleString();
+            }
+        } catch (_) {
+            // keep the dash on failure
+        }
+    }
+}
+fetchGitHubStars();
 
 // Active nav link highlighting
 const sections = document.querySelectorAll('section[id]');

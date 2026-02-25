@@ -38,15 +38,15 @@
                 <p class="hero-label">Embedded Systems & Edge AI</p>
                 <h1 class="hero-title">Building intelligent systems at the edge.</h1>
                 <p class="hero-subtitle">
-                    MSc researcher at Signify (Philips Lighting) focusing on TinyML deployment.
+                    MSc research intern at Signify (Philips Lighting) focusing on TinyML deployment.
                 </p>
                 <div class="hero-stats">
                     <div class="stat">
-                        <span class="stat-value">670K+</span>
+                        <span class="stat-value" id="yt-views">670K+</span>
                         <span class="stat-label">Video Views</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-value">6.5K</span>
+                        <span class="stat-value" id="yt-subs">7.2K</span>
                         <span class="stat-label">Subscribers</span>
                     </div>
                     <div class="stat">
@@ -203,17 +203,15 @@
                         </div>
                         <span class="exp-date">Oct 2025 — Present</span>
                     </div>
-                    <p class="exp-thesis"><em>AI Model Creation and Deployment on Microcontrollers in Signify Lighting Systems</em></p>
                     <ul class="exp-highlights">
                         <li>Designing and deploying TinyML/Edge AI models for smart lighting products</li>
                         <li>Model compression: quantization, pruning, Neural Architecture Search</li>
                         <li>Data collection and optimization for resource-constrained MCUs</li>
                     </ul>
                     <div class="exp-tags">
-                        <span>TinyML</span>
+                        <span>Simplicity Studio</span>
                         <span>Quantization</span>
-                        <span>NAS</span>
-                        <span>Edge AI</span>
+                        <span>Data collection</span>
                     </div>
                 </article>
 
@@ -221,7 +219,7 @@
                     <div class="exp-header">
                         <div class="exp-company">
                             <h3>Maastricht University </h3>
-                            <span class="exp-role">Research Intern</span>
+                            <span class="exp-role"> Intern</span>
                         </div>
                         <span class="exp-date">Jul — Oct 2025</span>
                     </div>
@@ -246,12 +244,12 @@
                         <span class="exp-date">Mar 2025 — Present</span>
                     </div>
                     <ul class="exp-highlights">
-                        <li>YOLOv8 deployment on edge controllers with NPU/BPU</li>
+                        <li>Compressed person detection model to 250KB & deployed on STM32F7</li>                        
+                        <li>YOLO Model deployment on edge controllers with NPU/BPU</li>
                         <li>Person tracking algorithms for drones</li>
-                        <li>Custom PX4 firmware for STM32H743VIT</li>
                     </ul>
                     <div class="exp-tags">
-                        <span>YOLOv8</span>
+                        <span>YOLO</span>
                         <span>PX4</span>
                         <span>Drones</span>
                     </div>
@@ -267,11 +265,11 @@
                     </div>
                     <ul class="exp-highlights">
                         <li>TA for Embedded Artificial Intelligence course</li>
-                        <li>CNN deployment on Xilinx Kria KV260 SOM</li>
+                        <li>Explained students about model training, quantization(PTQ,Fake quantization,QAT), Sparsity, edge deployment</li>
                     </ul>
                     <div class="exp-tags">
                         <span>Vitis-AI</span>
-                        <span>KV260</span>
+                        <span>Xilinx KV260</span>
                         <span>Teaching</span>
                         <span>Python</span>
                         <span>Linux</span>
@@ -291,6 +289,7 @@
                         <li>Electrical maintenance at 0.95 MTPA pig iron blast furnace</li>
                         <li>Predictive maintenance using vibration & thermal analysis</li>
                         <li>Reviewed vendor specifications for projects worth up to $50,000</li>
+                        <li>Managed team of electricians to carry out maintenance tasks</li>
                     </ul>
                     <div class="exp-tags">
                         <span>Industrial</span>
@@ -307,68 +306,199 @@
             <div class="section-header">
                 <h2 class="section-label">Projects</h2>
                 <p class="section-title">Open source work</p>
+                <p class="section-desc">Hover over a project to explore, click to view code or watch</p>
             </div>
 
-            <div class="project-grid">
-                <a href="https://github.com/pratikPhadte/ESP32-Flight-controller-" target="_blank" class="project-card project-featured">
-                    <div class="project-stars"><i class="fas fa-star"></i> 282</div>
-                    <h3>ESP32 Flight Controller</h3>
-                    <p>Complete flight controller for quadrotors with cascaded PID and complementary filters</p>
-                    <div class="project-tech">
-                        <span>C++</span>
-                        <span>PID Control</span>
-                        <span>PCB Design</span>
-                    </div>
-                </a>
+            <div class="project-grid-v2">
 
-                <a href="https://github.com/pratikPhadte/my_camera" target="_blank" class="project-card">
-                    <div class="project-stars"><i class="fas fa-star"></i> 12</div>
-                    <h3>ROS2 IP Camera Package</h3>
-                    <p>Video nodes from IP/USB cameras as ROS2 topics</p>
-                    <div class="project-tech">
-                        <span>ROS2</span>
-                        <span>C++</span>
-                        <span>MicroROS</span>
+                <!-- 1. LLM Controlled Drone -->
+                <div class="pcard">
+                    <div class="pcard-thumb">
+                        <img src="https://img.youtube.com/vi/cimnMgLYCnY/maxresdefault.jpg" alt="LLM Controlled Drone" loading="lazy">
+                        <div class="pcard-overlay">
+                            <p class="pcard-desc">Natural language commands to control a drone via LLM reasoning and PX4 autopilot</p>
+                            <div class="pcard-stars">
+                                <i class="fas fa-star"></i>
+                                <span class="gh-stars" data-repo="pratikPhadte/LLM-controlled-drone">—</span>
+                            </div>
+                            <div class="pcard-actions">
+                                <a href="https://github.com/pratikPhadte/LLM-controlled-drone" target="_blank" class="pcard-btn github"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="https://youtu.be/cimnMgLYCnY" target="_blank" class="pcard-btn youtube"><i class="fab fa-youtube"></i> Watch</a>
+                            </div>
+                        </div>
                     </div>
-                </a>
+                    <div class="pcard-info">
+                        <h3>LLM Controlled Drone</h3>
+                        <div class="pcard-tags"><span>Python</span><span>ROS2</span><span>Ollama</span><span>PX4</span></div>
+                    </div>
+                </div>
 
-                <a href="https://github.com/pratikPhadte/convolution_accelerator" target="_blank" class="project-card">
-                    <div class="project-stars"><i class="fas fa-star"></i> 2</div>
-                    <h3>2D Convolution Accelerator</h3>
-                    <p>HLS-based hardware accelerator with loop unrolling</p>
-                    <div class="project-tech">
-                        <span>Vitis HLS</span>
-                        <span>C++</span>
+                <!-- 2. ESP32 Flight Controller -->
+                <div class="pcard">
+                    <div class="pcard-thumb">
+                        <img src="https://img.youtube.com/vi/1zZbk0xWIrc/maxresdefault.jpg" alt="ESP32 Flight Controller" loading="lazy">
+                        <div class="pcard-overlay">
+                            <p class="pcard-desc">Complete C++ flight controller firmware for quadrotors with cascaded PID and complementary filters</p>
+                            <div class="pcard-stars">
+                                <i class="fas fa-star"></i>
+                                <span class="gh-stars" data-repo="pratikPhadte/ESP32-Flight-controller-">—</span>
+                            </div>
+                            <div class="pcard-actions">
+                                <a href="https://github.com/pratikPhadte/ESP32-Flight-controller-" target="_blank" class="pcard-btn github"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="https://www.youtube.com/watch?v=1zZbk0xWIrc" target="_blank" class="pcard-btn youtube"><i class="fab fa-youtube"></i> Watch</a>
+                            </div>
+                        </div>
                     </div>
-                </a>
+                    <div class="pcard-info">
+                        <h3>ESP32 Flight Controller Firmware</h3>
+                        <div class="pcard-tags"><span>C++</span><span>ESP32</span><span>PID</span><span>Sensor Fusion</span></div>
+                    </div>
+                </div>
 
-                <a href="https://github.com/pratikPhadte/ball_tracker" target="_blank" class="project-card">
-                    <div class="project-stars"><i class="fas fa-star"></i> 4</div>
-                    <h3>Ball Tracking ROS2</h3>
-                    <p>Low-latency ball tracking for mobile robots</p>
-                    <div class="project-tech">
-                        <span>ROS2</span>
-                        <span>Python</span>
+                <!-- 3. ROS2 IP Camera -->
+                <div class="pcard">
+                    <div class="pcard-thumb">
+                        <img src="https://img.youtube.com/vi/wu7xzIoHlFE/maxresdefault.jpg" alt="ROS2 IP Camera Node" loading="lazy">
+                        <div class="pcard-overlay">
+                            <p class="pcard-desc">Publish IP or USB camera feeds as ROS2 topics — plug-and-play for any robotics pipeline</p>
+                            <div class="pcard-stars">
+                                <i class="fas fa-star"></i>
+                                <span class="gh-stars" data-repo="pratikPhadte/my_camera">—</span>
+                            </div>
+                            <div class="pcard-actions">
+                                <a href="https://github.com/pratikPhadte/my_camera" target="_blank" class="pcard-btn github"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="https://youtu.be/wu7xzIoHlFE" target="_blank" class="pcard-btn youtube"><i class="fab fa-youtube"></i> Watch</a>
+                            </div>
+                        </div>
                     </div>
-                </a>
+                    <div class="pcard-info">
+                        <h3>ROS2 IP Camera Node</h3>
+                        <div class="pcard-tags"><span>ROS2</span><span>C++</span><span>OpenCV</span></div>
+                    </div>
+                </div>
 
-                <a href="https://github.com/pratikPhadte/EmbeddedAI_FinalProject_UT2025" target="_blank" class="project-card">
-                    <h3>CNN on KV260 Edge</h3>
-                    <p>INT8 quantized CNN deployed on Xilinx SoM</p>
-                    <div class="project-tech">
-                        <span>Vitis-AI</span>
-                        <span>Python</span>
+                <!-- 4. ESP32 Robot CV -->
+                <div class="pcard">
+                    <div class="pcard-thumb">
+                        <img src="https://img.youtube.com/vi/sN38dK37cNk/maxresdefault.jpg" alt="ESP32 Robot Computer Vision" loading="lazy">
+                        <div class="pcard-overlay">
+                            <p class="pcard-desc">ESP32 robot with ROS2, OpenCV, and Gazebo simulation for real-time ball tracking</p>
+                            <div class="pcard-stars">
+                                <i class="fas fa-star"></i>
+                                <span class="gh-stars" data-repo="pratikPhadte/ball_tracker">—</span>
+                            </div>
+                            <div class="pcard-actions">
+                                <a href="https://github.com/pratikPhadte/ball_tracker" target="_blank" class="pcard-btn github"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="https://youtu.be/sN38dK37cNk" target="_blank" class="pcard-btn youtube"><i class="fab fa-youtube"></i> Watch</a>
+                            </div>
+                        </div>
                     </div>
-                </a>
+                    <div class="pcard-info">
+                        <h3>ESP32 Robot — ROS2, OpenCV &amp; Gazebo</h3>
+                        <div class="pcard-tags"><span>ROS2</span><span>OpenCV</span><span>Gazebo</span><span>ESP32</span></div>
+                    </div>
+                </div>
 
-                <a href="https://github.com/pratikPhadte/DeepLearningG24" target="_blank" class="project-card">
-                    <h3>Adversarial Attacks on BERT</h3>
-                    <p>White & black box attacks with transfer learning</p>
-                    <div class="project-tech">
-                        <span>PyTorch</span>
-                        <span>NLP</span>
+                <!-- 5. Convolution Accelerator FPGA -->
+                <div class="pcard">
+                    <div class="pcard-thumb">
+                        <img src="https://raw.githubusercontent.com/pratikPhadte/convolution_accelerator/main/image.png" alt="Convolution Accelerator FPGA" loading="lazy">
+                        <div class="pcard-overlay">
+                            <p class="pcard-desc">HLS-based 2D convolution hardware accelerator on FPGA with loop unrolling and SIMD</p>
+                            <div class="pcard-stars">
+                                <i class="fas fa-star"></i>
+                                <span class="gh-stars" data-repo="pratikPhadte/convolution_accelerator">—</span>
+                            </div>
+                            <div class="pcard-actions">
+                                <a href="https://github.com/pratikPhadte/convolution_accelerator" target="_blank" class="pcard-btn github"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
                     </div>
-                </a>
+                    <div class="pcard-info">
+                        <h3>Convolution Accelerator — Vitis HLS</h3>
+                        <div class="pcard-tags"><span>Vitis HLS</span><span>C++</span><span>FPGA</span></div>
+                    </div>
+                </div>
+
+                <!-- 6. CNN on KV260 -->
+                <div class="pcard">
+                    <div class="pcard-thumb">
+                        <img src="https://img.youtube.com/vi/tzlHn4v9oog/maxresdefault.jpg" alt="CNN on Xilinx KV260" loading="lazy">
+                        <div class="pcard-overlay">
+                            <p class="pcard-desc">INT8 quantized CNN deployed on Xilinx Kria KV260 SOM using Vitis-AI DPU acceleration</p>
+                            <div class="pcard-stars">
+                                <i class="fas fa-star"></i>
+                                <span class="gh-stars" data-repo="pratikPhadte/EdgeAI-CNN-KV260">—</span>
+                            </div>
+                            <div class="pcard-actions">
+                                <a href="https://github.com/pratikPhadte/EdgeAI-CNN-KV260" target="_blank" class="pcard-btn github"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="https://www.youtube.com/watch?v=tzlHn4v9oog" target="_blank" class="pcard-btn youtube"><i class="fab fa-youtube"></i> Watch</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pcard-info">
+                        <h3>CNN on Xilinx Kria KV260 SOM</h3>
+                        <div class="pcard-tags"><span>Vitis-AI</span><span>Python</span><span>DPU</span></div>
+                    </div>
+                </div>
+
+                <!-- 7. Manoverboard Tracking -->
+                <div class="pcard">
+                    <div class="pcard-thumb">
+                        <img src="https://opengraph.githubassets.com/1/s-eeckhout/ipcv-project" alt="Manoverboard Tracking" loading="lazy">
+                        <div class="pcard-overlay">
+                            <p class="pcard-desc">Person overboard tracking &amp; distance estimation with image stabilization using classical computer vision</p>
+                            <div class="pcard-actions">
+                                <a href="https://github.com/s-eeckhout/ipcv-project" target="_blank" class="pcard-btn github"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="https://github.com/s-eeckhout/ipcv-project?tab=readme-ov-file#results" target="_blank" class="pcard-btn results"><i class="fas fa-play-circle"></i> Results</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pcard-info">
+                        <h3>Manoverboard Tracking &amp; Distance Estimation</h3>
+                        <div class="pcard-tags"><span>OpenCV</span><span>Stabilization</span><span>C++</span></div>
+                    </div>
+                </div>
+
+                <!-- 8. Neuromorphic Vision -->
+                <div class="pcard">
+                    <div class="pcard-thumb">
+                        <img src="https://img.youtube.com/vi/49HMt4IzYfI/maxresdefault.jpg" alt="Neuromorphic Vision Person Detection" loading="lazy">
+                        <div class="pcard-overlay">
+                            <p class="pcard-desc">Event-based person detection — MobileNetV2 trained and deployed on STM32F7 with only 320KB RAM</p>
+                            <div class="pcard-actions">
+                                <a href="https://www.linkedin.com/posts/pratikphadte_neuromorphic-mobilenetv2-coco-activity-7393236978206425088-bk6c" target="_blank" class="pcard-btn linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                                <a href="https://youtu.be/49HMt4IzYfI" target="_blank" class="pcard-btn youtube"><i class="fab fa-youtube"></i> Watch</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pcard-info">
+                        <h3>Neuromorphic Vision Person Detection</h3>
+                        <div class="pcard-tags"><span>TFLite Micro</span><span>STM32</span><span>MobileNetV2</span></div>
+                    </div>
+                </div>
+
+                <!-- 9. Docker PX4 ROS2 Gazebo -->
+                <div class="pcard">
+                    <div class="pcard-thumb">
+                        <img src="https://opengraph.githubassets.com/1/pratikPhadte/DOCKER_px4-gz_harmonic-ros_jazzy" alt="Docker PX4 ROS2 Gazebo" loading="lazy">
+                        <div class="pcard-overlay">
+                            <p class="pcard-desc">Complete Docker setup for PX4 simulation with ROS2 Jazzy and Gazebo Harmonic — one-command dev environment</p>
+                            <div class="pcard-stars">
+                                <i class="fas fa-star"></i>
+                                <span class="gh-stars" data-repo="pratikPhadte/DOCKER_px4-gz_harmonic-ros_jazzy">—</span>
+                            </div>
+                            <div class="pcard-actions">
+                                <a href="https://github.com/pratikPhadte/DOCKER_px4-gz_harmonic-ros_jazzy" target="_blank" class="pcard-btn github"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pcard-info">
+                        <h3>Docker — PX4 + ROS2 Jazzy + Gazebo</h3>
+                        <div class="pcard-tags"><span>Docker</span><span>PX4</span><span>ROS2</span><span>Gazebo</span></div>
+                    </div>
+                </div>
+
             </div>
 
             <div class="github-cta">
@@ -437,7 +567,7 @@
                 <div class="contact-text">
                     <h2 class="section-label">Contact</h2>
                     <p class="section-title">Let's connect</p>
-                    <p class="contact-desc">Open to collaborations, consulting, and interesting conversations about embedded systems and AI.</p>
+                    <p class="contact-desc">Open to collaborations, consulting, and interesting conversations about UAVs, embedded systems and AI.</p>
 
                     <div class="contact-info">
                         <div class="contact-item">
