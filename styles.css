@@ -679,6 +679,19 @@ a {
     opacity: 1;
 }
 
+/* Touch devices: always show overlay since hover doesn't work */
+@media (hover: none) {
+    .pcard-overlay {
+        opacity: 1;
+        background: linear-gradient(
+            to top,
+            rgba(8, 8, 8, 0.95) 0%,
+            rgba(8, 8, 8, 0.6) 50%,
+            transparent 100%
+        );
+    }
+}
+
 .pcard-desc {
     color: rgba(255, 255, 255, 0.85);
     font-size: 0.81rem;
