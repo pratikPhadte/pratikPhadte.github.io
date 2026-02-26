@@ -75,7 +75,7 @@ document.querySelectorAll('.exp-card, .pcard, .blog-card, .achievement-card, .vi
 
 // ── YouTube Live Stats (cached 24 h in localStorage) ───────────────────────
 // Paste your YouTube Data API v3 key below (restrict it to pratikphadte.github.io)
-const YT_API_KEY    = 'AIzaSyCt3yw9cAZRJF8G-1VsFPv7mIOJO0DwjVM';                        // <-- add your key here
+const YT_API_KEY    = '';                        // <-- add your key here
 const YT_CHANNEL_ID = 'UCnBW5MXKhvQDfcmhcx0RqOQ';
 
 async function fetchYouTubeStats() {
