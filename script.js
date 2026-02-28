@@ -117,16 +117,28 @@ function applyYouTubeStats(stats) {
 
 fetchYouTubeStats();
 
-// Fetch live GitHub star counts
+// Fetch live GitHub star counts (cached 1 h in localStorage)
 async function fetchGitHubStars() {
+    const TTL = 60 * 60 * 1000; // 1 hour
     const elements = document.querySelectorAll('.gh-stars[data-repo]');
     for (const el of elements) {
         const repo = el.getAttribute('data-repo');
+        const cacheKey = `gh_stars_${repo}`;
+        const cached = localStorage.getItem(cacheKey);
+        if (cached) {
+            const { stars, ts } = JSON.parse(cached);
+            if (Date.now() - ts < TTL) {
+                el.textContent = stars;
+                continue;
+            }
+        }
         try {
             const res = await fetch(`https://api.github.com/repos/${repo}`);
             if (res.ok) {
                 const data = await res.json();
-                el.textContent = data.stargazers_count.toLocaleString();
+                const stars = data.stargazers_count.toLocaleString();
+                el.textContent = stars;
+                localStorage.setItem(cacheKey, JSON.stringify({ stars, ts: Date.now() }));
             }
         } catch (_) {
             // keep the dash on failure
