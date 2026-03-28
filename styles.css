@@ -519,6 +519,19 @@ a {
     text-align: center;
 }
 
+.yt-channel-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.95rem;
+    color: var(--gray-600);
+}
+
+.yt-channel-stats i {
+    margin-right: 0.35rem;
+}
+
 /* ===== Experience Section ===== */
 .experience {
     background: var(--white);
@@ -862,6 +875,17 @@ a {
 
 .github-cta {
     text-align: center;
+}
+
+.gh-total-stars-display {
+    margin-bottom: 1.25rem;
+    font-size: 0.95rem;
+    color: var(--gray-600);
+}
+
+.gh-total-stars-display .fa-star {
+    color: #f5a623;
+    margin-right: 0.35rem;
 }
 
 /* ===== Achievements Section ===== */

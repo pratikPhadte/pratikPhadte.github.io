@@ -121,6 +121,7 @@ fetchYouTubeStats();
 async function fetchGitHubStars() {
     const TTL = 60 * 60 * 1000; // 1 hour
     const elements = document.querySelectorAll('.gh-stars[data-repo]');
+    let totalStars = 0;
     for (const el of elements) {
         const repo = el.getAttribute('data-repo');
         const cacheKey = `gh_stars_${repo}`;
@@ -129,6 +130,7 @@ async function fetchGitHubStars() {
             const { stars, ts } = JSON.parse(cached);
             if (Date.now() - ts < TTL) {
                 el.textContent = stars;
+                totalStars += parseInt(stars.replace(/,/g, ''), 10) || 0;
                 continue;
             }
         }
@@ -136,13 +138,19 @@ async function fetchGitHubStars() {
             const res = await fetch(`https://api.github.com/repos/${repo}`);
             if (res.ok) {
                 const data = await res.json();
-                const stars = data.stargazers_count.toLocaleString();
+                const count = data.stargazers_count;
+                const stars = count.toLocaleString();
                 el.textContent = stars;
+                totalStars += count;
                 localStorage.setItem(cacheKey, JSON.stringify({ stars, ts: Date.now() }));
             }
         } catch (_) {
             // keep the dash on failure
         }
+    }
+    const totalEl = document.getElementById('gh-total-stars');
+    if (totalEl && totalStars > 0) {
+        totalEl.textContent = totalStars.toLocaleString() + '+';
     }
 }
 fetchGitHubStars();

@@ -39,20 +39,6 @@
                 <p class="hero-subtitle">
                     Conducting Master's Thesis at Signify(Philips Lighting) associated with University of Twente, specializing in Embedded systems and Artificial Intelligence.
                 </p>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-value" id="yt-views">730,000+</span>
-                        <span class="stat-label">Video Views</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-value" id="yt-subs">7,400+</span>
-                        <span class="stat-label">Subscribers</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-value">300+</span>
-                        <span class="stat-label">GitHub Stars</span>
-                    </div>
-                </div>
                 <div class="hero-actions">
                     <a href="#videos" class="btn btn-primary">My YouTube Videos</a>
                     <a href="#contact" class="btn btn-outline">Get in Touch</a>
@@ -81,12 +67,12 @@
                         <div class="edu-item">
                             <span class="edu-degree">MSc Embedded Systems</span>
                             <span class="edu-school">University of Twente • 2024-Present • GPA 8/10</span>
-                            <a href="https://drive.google.com/file/d/1dDJAR-cP_r-vxz36GdWNVaRwS1H64FRb/view" target="_blank" class="edu-results-link">View Results →</a>
+                            <!-- <a href="" target="_blank" class="edu-results-link">View Results →</a> -->
                         </div>
                         <div class="edu-item">
                             <span class="edu-degree">BE Electrical & Electronics</span>
                             <span class="edu-school">Goa University • 2017-21• GPA 9/10</span>
-                            <a href="https://drive.google.com/file/d/1BoPYtzweBv7wE4-C22zw84DfHGeW3kJS/view" target="_blank" class="edu-results-link">View Results →</a>
+                            <!-- <a href="" target="_blank" class="edu-results-link">View Results →</a> -->
                         </div>
                     </div>
                 </div>
@@ -175,11 +161,26 @@
                         </iframe>
                     </div>
                 </div>
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <iframe
+                            src="https://www.youtube.com/embed/cimnMgLYCnY"
+                            title="LLM Controlled Drone"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
             </div>
 
             <div class="youtube-cta">
+                <div class="yt-channel-stats">
+                    <span><i class="fas fa-users"></i> <span id="yt-subs">8,000+</span> subscribers</span>
+                    <span><i class="fas fa-eye"></i> <span id="yt-views">785,000+</span> views</span>
+                </div>
                 <a href="https://youtube.com/@pratikphadte" target="_blank" class="btn btn-youtube">
-                    <i class="fab fa-youtube"></i> Subscribe on YouTube
+                    <i class="fab fa-youtube"></i> YouTube
                 </a>
             </div>
         </div>
@@ -204,6 +205,7 @@
                     </div>
                     <ul class="exp-highlights">
                         <li>Designing and deploying TinyML/Edge AI models for smart lighting products</li>
+                        <li>MCU profiling for power, CPU load and resource usage (RAM, Flash)</li>
                         <li>Model compression: quantization, pruning, Neural Architecture Search</li>
                         <li>Data collection and optimization for resource-constrained MCUs</li>
                     </ul>
@@ -211,6 +213,7 @@
                         <span>Simplicity Studio</span>
                         <span>Quantization</span>
                         <span>Data collection</span>
+                        <span>RTOS</span>
                     </div>
                 </article>
 
@@ -249,12 +252,12 @@
                         <span class="exp-date">Mar 2025 — Present</span>
                     </div>
                     <ul class="exp-highlights">
-                        <li>Compressed person detection model to 250KB & deployed on STM32F7</li>                        
-                        <li>YOLO Model deployment on edge controllers with NPU/BPU</li>
+                        <li>UAV systems design, simulation, and testing</li>
+                        <li>PX4 autopilot Custom FC design</li>
                         <li>Person tracking algorithms for drones</li>
                     </ul>
                     <div class="exp-tags">
-                        <span>YOLO</span>
+                        <span>Edge compute</span>
                         <span>PX4</span>
                         <span>Drones</span>
                     </div>
@@ -286,6 +289,25 @@
                             <span class="exp-playlist-label"><i class="fab fa-youtube"></i> Watch Setup Playlist</span>
                         </a>
                         <a href="https://github.com/pratikPhadte/EmbeddedAI_FinalProject_UT2025" target="_blank" class="pcard-btn github" style="align-self: flex-end; margin-bottom: 0.25rem;"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </article>
+
+                <article class="exp-card">
+                    <div class="exp-header">
+                        <div class="exp-company">
+                            <h3>CARES, Government of Goa</h3>
+                            <span class="exp-role">Project Associate — Panjim, India</span>
+                        </div>
+                    </div>
+                    <ul class="exp-highlights">
+                        <li>R&amp;D focused on developing a quadcopter flight controller using low-computation chipsets</li>
+                        <li>Developed block-based visual microcontroller programming software for young learners to program microcontrollers using blocks</li>
+                        <li>Taught school students basics of programming with emphasis on analytical thinking</li>
+                    </ul>
+                    <div class="exp-tags">
+                        <span>Flight Controller</span>
+                        <span>Embedded Systems</span>
+                        <span>Teaching</span>
                     </div>
                 </article>
 
@@ -514,6 +536,9 @@
             </div>
 
             <div class="github-cta">
+                <div class="gh-total-stars-display">
+                    <i class="fas fa-star"></i> <span id="gh-total-stars">300+</span> total stars across all repos
+                </div>
                 <a href="https://github.com/pratikPhadte" target="_blank" class="btn btn-outline">
                     <i class="fab fa-github"></i> View All on GitHub
                 </a>
